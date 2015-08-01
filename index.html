@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Person Generator</title>
+</head>
+<body>
+	
+	<script src="/js/personGenerator.js"></script>
+	<script>
+		var a = RandomPerson({
+			gender: "male",
+		});
+
+		var b = RandomPerson({
+			gender: "female",
+		});
+
+		var c = RandomPerson({
+			maxAge: 10
+		});
+
+		var d = RandomPerson({
+			minAge: 14,
+			maxAge: 20
+		});
+
+
+		document.body.innerHTML = "<h3>Generated male</h3><pre>" + a.toString() + "</pre>";
+		document.body.innerHTML += "<h3>Generated female</h3><pre>" + b.toString() + "</pre>";
+		document.body.innerHTML += "<h3>Generated child</h3><pre>" + c.toString() + "</pre>";
+		document.body.innerHTML += "<h3>Generated teenager</h3><pre>" + d.toString() + "</pre>";
+	</script>
+</body>
+</html>
