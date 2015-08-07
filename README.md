@@ -1,6 +1,6 @@
 #Random Person - Native Javascript Random Person Generator (v. 0.0.1 alpha)
 
-####Use example
+####Usage example
 
 You just need to call RandomPerson function: `new RandomPerson()` or just `RandomPerson()`
 
@@ -46,6 +46,7 @@ var options = {
 	minHeight: 190, //cm
 	hairColor: 'brown',
 	gender: 'male',
+	name: 'Max'
 }
 ```
 Then just pass options object to RandomPerson function: `new RandomPerson(options);`

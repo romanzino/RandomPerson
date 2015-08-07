@@ -180,9 +180,13 @@ var RandomPerson = function (userOptions) {
 	 * Generates person's name
 	 */
 	function generateName () {
-		var names = options.name[context.gender];
-
-		context.name = names[randomInt(0, names.length - 1)]
+		if (typeof options.name === "object") {
+			var names = options.name[context.gender];
+			context.name = names[randomInt(0, names.length - 1)]
+		}
+		else {
+			context.name = options.name;
+		}
 	}
 
 
