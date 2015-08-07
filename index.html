@@ -16,7 +16,7 @@
 <body>
 	<h1>Random persons:</h1>
 	<textarea class="textarea" id="result" cols="30" rows="10"></textarea>
-	<script src="/js/personGenerator.js"></script>
+	<script src="js/personGenerator.js"></script>
 	<script>
 		var element = document.getElementById("result");
 		element.insertAdjacentHTML("afterbegin", new RandomPerson().toString()+"\n");
