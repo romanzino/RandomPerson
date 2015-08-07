@@ -3,33 +3,28 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Person Generator</title>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		.textarea {
+			width: 90%;
+			margin: 20px;
+		}
+	</style>
 </head>
 <body>
-	
+	<h1>Random persons:</h1>
+	<textarea class="textarea" id="result" cols="30" rows="10"></textarea>
 	<script src="/js/personGenerator.js"></script>
 	<script>
-		var a = RandomPerson({
-			gender: "male",
-		});
+		var element = document.getElementById("result");
+		element.insertAdjacentHTML("afterbegin", new RandomPerson().toString()+"\n");
 
-		var b = RandomPerson({
-			gender: "female",
-		});
+		setInterval(function () {
+			element.insertAdjacentHTML("beforeEnd", new RandomPerson().toString()+"\n");
+		}, 1500);
 
-		var c = RandomPerson({
-			maxAge: 10
-		});
-
-		var d = RandomPerson({
-			minAge: 14,
-			maxAge: 20
-		});
-
-
-		document.body.innerHTML = "<h3>Generated male</h3><pre>" + a.toString() + "</pre>";
-		document.body.innerHTML += "<h3>Generated female</h3><pre>" + b.toString() + "</pre>";
-		document.body.innerHTML += "<h3>Generated child</h3><pre>" + c.toString() + "</pre>";
-		document.body.innerHTML += "<h3>Generated teenager</h3><pre>" + d.toString() + "</pre>";
 	</script>
 </body>
 </html>
