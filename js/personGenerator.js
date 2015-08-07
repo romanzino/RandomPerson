@@ -8,9 +8,9 @@
 
 /**
  * Generates random person
- * @param {object} options
+ * @param {object} userOptions
  */
-var RandomPerson = function (userOptions) {
+function RandomPerson (userOptions) {
 	var key, value, options, context;
 
 	context = this;
@@ -205,8 +205,7 @@ var RandomPerson = function (userOptions) {
 	 * @param  {string} error
 	 */
 	function optionError (error) {
-		console.error("RandomPerson Fatal Error: " + error);
-		return;
+		throw new Error("RandomPerson Fatal Error: " + error);
 	}
 
 	/**
