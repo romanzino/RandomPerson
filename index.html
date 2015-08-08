@@ -7,24 +7,66 @@
 		* {
 			box-sizing: border-box;
 		}
+		body {
+			font-size: 16px;
+		}
 		.textarea {
 			width: 90%;
-			margin: 20px;
+			margin: 20px 0;
+			font-size: 18px;
+		}
+		.button {
+			padding: 10px 20px;
+			text-transform: uppercase;
+			font-weight: bold;
+			font-size: 16px;
+			font-family: sans-serif;
+			color: #000;
+			background-color: transparent;
+			border: 1px solid #000;
+			cursor: pointer;
+			transition: background-color 100ms linear;
+			text-decoration: none;
+			border-radius: 1px;
+		}
+		.button:hover {
+			background-color: #FBF6F6;
 		}
 	</style>
 </head>
 <body>
-	<h1>Random persons:</h1>
+	<main>
+		<h1>Javascript random person generator</h1>
+		<p>The script allows you to generate a random person with following parameters:</p>
+		<ul>
+			<li>sex</li>
+			<li>age</li>
+			<li>height</li>
+			<li>weight</li>
+			<li>hair color</li>
+			<li>name</li>
+		</ul>
+	</main>
 	<textarea class="textarea" id="result" cols="30" rows="10"></textarea>
+	<div>
+		<button class="button" data-start>Generate random person</button>
+		<a href="https://github.com/Linnas/RandomPerson" class="button" role="button">Download script at github</a>
+	</div>
 	<script src="js/personGenerator.js"></script>
 	<script>
-		var element = document.getElementById("result");
-		element.insertAdjacentHTML("afterbegin", new RandomPerson().toString()+"\n");
+		var interval, element;
 
-		setInterval(function () {
+		element = document.getElementById("result");
+
+		window.onload = generate;
+
+		document.querySelector("[data-start]").onclick = function () {
+			generate();
+		}
+
+		function generate() {
 			element.insertAdjacentHTML("beforeEnd", new RandomPerson().toString()+"\n");
-		}, 1500);
-
+		}
 	</script>
 </body>
 </html>

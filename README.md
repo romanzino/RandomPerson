@@ -1,4 +1,5 @@
-#Random Person - Native Javascript Random Person Generator (v. 0.0.1 alpha)
+##Random Person - Native Javascript Random Person Generator 
+######version 0.0.1 alpha
 
 ####Usage example
 
